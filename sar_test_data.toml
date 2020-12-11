@@ -1,0 +1,60 @@
+# example of config toml
+# IT IS IMPORTANT to uphold the naming of the keys and tables.
+# Rows must be specified before table or it will be considered
+# as part of it. This is by TOML implementation design.
+
+rows = 10000
+index = "sar_test_data"
+save_as = "es"
+
+[[specify]]
+    data_type = "date"
+    column_name = "timestamp"
+    format_template = "%Y-%m-%d_%H:%M:S"
+
+[[specify]]
+    data_type = "list"
+    column_name = "hostname"
+    file_name = "hostname.txt"
+
+[[specify]]
+    data_type = "int"
+    column_name = "customer_id"
+    lower_bound = 0
+    upper_bound = 1000
+
+[[specify]]
+    data_type = "float"
+    column_name = "sar.cpu.core.num"
+    lower_bound = 0.0
+    upper_bound = 100.0
+
+[[specify]]
+    data_type = "float"
+    column_name = "sar.cpu.core.nice"
+    lower_bound = 0.0
+    upper_bound = 100.0
+
+[[specify]]
+    data_type = "float"
+    column_name = "sar.cpu.core.pct_sys"
+    lower_bound = 0.0
+    upper_bound = 100.0
+
+[[specify]]
+    data_type = "float"
+    column_name = "sar.cpu.core.pct_iowait"
+    lower_bound = 0.0
+    upper_bound = 100.0
+
+[[specify]]
+    data_type = "float"
+    column_name = "sar.cpu.core.pct_steal"
+    lower_bound = 0.0
+    upper_bound = 100.0
+
+[[specify]]
+    data_type = "float"
+    column_name = "sar.cpu.core.pct_ideal"
+    lower_bound = 0.0
+    upper_bound = 100.0
