@@ -1,0 +1,53 @@
+# example of config toml
+# IT IS IMPORTANT to uphold the naming of the keys and tables.
+# Rows must be specified before table or it will be considered
+# as part of it. This is by TOML implementation design.
+
+rows = 3000
+index = "io_test_data"
+save_as = "es"
+
+[[specify]]
+    data_type = "date"
+    column_name = "timestamp"
+    format_template = "%Y-%m-%d"
+
+[[specify]]
+    data_type = "list"
+    column_name = "hostname"
+    file_name = "hostname.txt"
+
+[[specify]]
+    data_type = "list"
+    column_name = "type"
+    file_name = "write.txt"
+
+[[specify]]
+    data_type = "float"
+    column_name = "io.tps"
+    lower_bound = 0.0
+    upper_bound = 10000.0
+
+[[specify]]
+    data_type = "float"
+    column_name = "io.write_tps"
+    lower_bound = 0.0
+    upper_bound = 10000.0
+
+[[specify]]
+    data_type = "float"
+    column_name = "io.read_tps"
+    lower_bound = 0.0
+    upper_bound = 0.0
+
+[[specify]]
+    data_type = "float"
+    column_name = "io.read_blk_per_sec"
+    lower_bound = 0.0
+    upper_bound = 0.0
+
+[[specify]]
+    data_type = "float"
+    column_name = "io.write_blk_per_sec"
+    lower_bound = 0.0
+    upper_bound = 100000.0
