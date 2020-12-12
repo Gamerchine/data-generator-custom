@@ -1,0 +1,42 @@
+# example of config toml
+# IT IS IMPORTANT to uphold the naming of the keys and tables.
+# Rows must be specified before table or it will be considered
+# as part of it. This is by TOML implementation design.
+
+rows = 10000
+index = "nw_test_data"
+save_as = "es"
+
+[[specify]]
+    data_type = "date"
+    column_name = "timestamp"
+    format_template = "%Y-%m-%d"
+
+[[specify]]
+    data_type = "list"
+    column_name = "hostname"
+    file_name = "hostname1.txt"
+
+[[specify]]
+    data_type = "float"
+    column_name = "nw.rx_pkt_per_sec"
+    lower_bound = 0.0
+    upper_bound = 10000.0
+
+[[specify]]
+    data_type = "float"
+    column_name = "nw.tx_pkt_per_sec"
+    lower_bound = 0.0
+    upper_bound = 10000.0
+
+[[specify]]
+    data_type = "float"
+    column_name = "nw.rx_kb_per_sec"
+    lower_bound = 0.0
+    upper_bound = 100000.0
+
+[[specify]]
+    data_type = "float"
+    column_name = "nw.tx_kb_per_sec"
+    lower_bound = 0.0
+    upper_bound = 100000.0
